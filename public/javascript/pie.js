@@ -17,7 +17,7 @@ var translate = function (x, y) {
 var arc = d3.arc()
     .outerRadius(RADIUS - 10);
 
-function createPieChart(svg, pie,arcInnerRadius) {
+function createPieChart(svg, pie, arcInnerRadius) {
     arc.innerRadius(arcInnerRadius);
 
     var g = svg.selectAll("g")
@@ -39,14 +39,45 @@ function createPieSvg(container) {
         .attr("transform", translate(WIDTH / 2, HEIGHT / 2));
 }
 
-var loadPie = function () {
-    var pieSvg = createPieSvg("container");
-    createPieChart(pieSvg, pie,0);
-    var halfPieSvg = createPieSvg("half_pie_container");
-    createPieChart(halfPieSvg, halfPie,0);
-    var donandPieSvg = createPieSvg("donand_container");
-    createPieChart(donandPieSvg, pie,140);
-    var halfDonandSvg = createPieSvg("half_donand_container");
-    createPieChart(halfDonandSvg, halfPie,140);
+var pieOperating = {donutInnerRadius: 140, pieInnerRadius: 0};
+
+var operate = function (chart, svg) {
+    switch (chart) {
+        case "Pie Chart":
+            createPieChart(svg, pie, pieOperating.pieInnerRadius);
+            break;
+        case "Donut Pie Chart":
+            createPieChart(svg, pie, pieOperating.donutInnerRadius);
+            break;
+        case "Half Pie Chart":
+            createPieChart(svg, halfPie, pieOperating.pieInnerRadius);
+            break;
+        case "Half Donut Pie Chart":
+            createPieChart(svg, halfPie, pieOperating.donutInnerRadius);
+            break;
+    }
 };
+
+var createButtons = function () {
+    var data = ["Pie Chart", "Donut Pie Chart", "Half Pie Chart", "Half Donut Pie Chart"];
+    d3.select('body').append("div")
+        .attr('class', 'button')
+        .selectAll('button').data(data)
+        .enter().append("button")
+        .on("click", function (d) {
+            d3.select(".container").select("svg").remove();
+            var pieSvg = createPieSvg("container");
+            operate(d, pieSvg);
+        })
+        .text(function (d) {
+            return d
+        });
+};
+
+var loadPie = function () {
+    createButtons();
+    var pieSvg = createPieSvg("container");
+    createPieChart(pieSvg, pie, 0);
+};
+
 window.onload = loadPie;
