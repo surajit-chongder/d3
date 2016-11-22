@@ -35,7 +35,7 @@ function createPieSvg(container) {
         .attr("width", WIDTH)
         .attr("height", HEIGHT)
         .append("g")
-        .attr("transform", translate(WIDTH / 2, HEIGHT / 2));
+        .attr("transform", translate(WIDTH / 2 , HEIGHT / 2));
 }
 
 var loadPie = function () {
