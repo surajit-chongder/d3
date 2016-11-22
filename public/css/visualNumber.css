@@ -1,0 +1,12 @@
+.container{
+	overflow: hidden;
+	position: relative;
+}
+.number{
+	margin-right: 10px;
+	border: 1px solid black;
+	
+}
+body{
+	text-align: center;
+}

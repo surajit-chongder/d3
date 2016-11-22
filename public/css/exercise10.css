@@ -1,0 +1,26 @@
+h1{
+	text-align: center;
+}
+.lineChart{
+	stroke: steelblue;
+	stroke-width: 2px;
+	fill:none;
+}
+circle{
+	r : 5px;
+	stroke: steelblue;
+	fill: white;
+	stroke-width : 1.5px;
+}
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 2px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

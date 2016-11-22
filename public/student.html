@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Visualization</title>
+	<link rel="stylesheet" type="text/css" href="css/student.css">
+</head>
+<body>
+	<script type="text/javascript" src="javascript/d3.v4.min.js"></script>
+	<script type="text/javascript" src="javascript/lodash.min.js"></script>
+	<script type="text/javascript" src="javascript/student.js"></script>
+	<div class="container"></div>
+	<div class="change">
+	    <button onclick="sortStudent('name')">
+	        Name
+	    </button>
+	    <button onclick="sortStudent('subject')">
+	        Subject
+	    </button>
+	    <button onclick="sortStudent('score')">
+	        Score
+	    </button>
+	</div>
+	<table class="color_container"></table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+
+.lineChart {
+    stroke: steelblue;
+    stroke-width: 2px;
+    fill: none;
+}
+
+circle {
+    r: 5px;
+    stroke: steelblue;
+    fill: white;
+    stroke-width: 1.5px;
+}
+
+.area {
+    fill: #c6dbef;
+}

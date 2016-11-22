@@ -1,0 +1,10 @@
+body{
+	text-align: center;
+}
+
+.container{
+	width:1600px;
+}
+td{
+	background-color:pink;
+}

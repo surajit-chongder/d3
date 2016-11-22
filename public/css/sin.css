@@ -1,0 +1,19 @@
+h1{
+	text-align: center;
+}
+.lineChart{
+	stroke: darkred;
+	stroke-width: 2px;
+	fill:none;
+}
+.sinChart{
+	stroke: darkblue;
+	stroke-width: 2px;
+	fill:none;
+}
+circle{
+	r : 5px;
+	stroke: steelblue;
+	fill: white;
+	stroke-width : 1.5px;
+}

@@ -1,0 +1,31 @@
+h1{
+	text-align: center;
+}
+.container{
+	padding: 100px;
+	text-align: center;
+}
+
+svg{
+	height: 100px;
+	width:500px;
+	padding: 10px 50px 10px 10px;
+}
+rect{
+	stroke: steelblue;
+	height: 100px;
+	width: 100px;
+}
+circle{
+	stroke: red;
+}
+line{
+	stroke: black;
+}
+polygon{
+	stroke: green;
+}
+g{
+	fill: none;
+	stroke-width : 2;
+}
