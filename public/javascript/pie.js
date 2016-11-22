@@ -15,10 +15,11 @@ var translate = function (x, y) {
 };
 
 var arc = d3.arc()
-    .outerRadius(RADIUS - 10)
-    .innerRadius(0);
+    .outerRadius(RADIUS - 10);
 
-function createPieChart(svg, pie) {
+function createPieChart(svg, pie,arcInnerRadius) {
+    arc.innerRadius(arcInnerRadius);
+
     var g = svg.selectAll("g")
         .data(pie)
         .enter();
@@ -35,13 +36,17 @@ function createPieSvg(container) {
         .attr("width", WIDTH)
         .attr("height", HEIGHT)
         .append("g")
-        .attr("transform", translate(WIDTH / 2 , HEIGHT / 2));
+        .attr("transform", translate(WIDTH / 2, HEIGHT / 2));
 }
 
 var loadPie = function () {
     var pieSvg = createPieSvg("container");
-    createPieChart(pieSvg, pie);
+    createPieChart(pieSvg, pie,0);
     var halfPieSvg = createPieSvg("half_pie_container");
-    createPieChart(halfPieSvg, halfPie);
+    createPieChart(halfPieSvg, halfPie,0);
+    var donandPieSvg = createPieSvg("donand_container");
+    createPieChart(donandPieSvg, pie,140);
+    var halfDonandSvg = createPieSvg("half_donand_container");
+    createPieChart(halfDonandSvg, halfPie,140);
 };
 window.onload = loadPie;
